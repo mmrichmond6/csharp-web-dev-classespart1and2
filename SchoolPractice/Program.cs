@@ -10,7 +10,10 @@ namespace SchoolPractice
             Student studentRichmond = new Student("Michele", 12345, 1, 4.0);
 
             Console.WriteLine(studentRichmond.Name + "  " + studentRichmond.StudentId + "  " + studentRichmond.NumberOfCredits + "  " + studentRichmond.Gpa);
-            
+
+            studentRichmond.Print();
+
+
         }
     }
 }
