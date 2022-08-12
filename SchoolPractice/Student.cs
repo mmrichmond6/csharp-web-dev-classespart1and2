@@ -8,54 +8,41 @@ namespace SchoolPractice
 {
     public class Student
     {
+        
+        //Properties
         private static int nextStudentId = 1;
 
-        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
         public int StudentId { get; set; }
         public int NumberOfCredits { get; set; }
-        public double Gpa { get; set; }
+        public double GPA { get; set; }
 
-        public Student(string name, int studentId, int numberOfCredits, double gpa)
+        //Constructor (these have been "overloaded" meaning there is more than one constructor for the same type
+        public Student(string lastName, string firstName, int studentId, int numberOfCredits, double gpa)
         {
-            Name = name;
-            StudentId = studentId;
-            NumberOfCredits = numberOfCredits;
-            Gpa = gpa;
+            //Assign properties to values being passed through the constructor
+            this.LastName = lastName;
+            this.FirstName = firstName;
+            this.StudentId = studentId;
+            this.NumberOfCredits = numberOfCredits;
+            this.GPA = gpa;
+        }
+        //Another constructor
+        public Student(string lastName, string firstName, int studentId) : this(lastName, firstName, studentId, 0, 0)
+        {
+            this.LastName = lastName;
+            this.FirstName = firstName;
+            this.StudentId = studentId;
+            this.NumberOfCredits = 0;
+            this.GPA = 0;
         }
 
-        public Student(string name, int studentId) : this(name, studentId, 0, 0) { }
-
-        public Student(string name) : this(name, nextStudentId)
+        public Student(string lastName, string firstName) : this(lastName, firstName, nextStudentId)
         {
+            this.LastName = lastName;
+            this.FirstName = firstName;
             nextStudentId++;
         }
-
-        public void Print()
-        {
-            Console.WriteLine(Name + "  " + StudentId + "  " + NumberOfCredits + "  " + Gpa);
-        }
-
-
-        /*
-         public List<Student> students = new List<Student>()
-         {
-             new Student ("student1", 1),
-             new Student ("student2", 2),
-             new Student ("student3", 3)
-         };
-
-         public List<string> GetList(List<string> students)
-         {
-             return students;
-         }
-
-         public void PrintList()
-         {
-             foreach(var student in students)
-             {
-                 Console.WriteLine(student);
-             }
-         }
-        */
     }
 }

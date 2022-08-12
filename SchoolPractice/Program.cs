@@ -7,11 +7,10 @@ namespace SchoolPractice
         public static void Main(string[] args)
         {
             // TODO: Instantiate your objects and test your exercise solutions with print statements here.
-            Student studentRichmond = new Student("Michele", 12345, 1, 4.0);
-
-            Console.WriteLine(studentRichmond.Name + "  " + studentRichmond.StudentId + "  " + studentRichmond.NumberOfCredits + "  " + studentRichmond.Gpa);
-
-            studentRichmond.Print();
+            
+            //instantiate the object studentdetails and within it we will have instantiated the student class as well; now we have access to the print output by calling the method
+            StudentDetails sd = new StudentDetails();
+            sd.Print();
 
 
         }

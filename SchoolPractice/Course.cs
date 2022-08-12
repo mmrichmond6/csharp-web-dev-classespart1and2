@@ -6,11 +6,16 @@ namespace SchoolPractice
 {
     public class Course
     {
-        private string topic;
-        private Teacher instructor;
-        private List<Student> enrolledStudents;
+        private string Topic;
+        private Teacher Instructor;
+        private List<Student> EnrolledStudents;
 
-        
+        public Course(string topic, Teacher instructor, List<Student> enrolledStudents)
+        {
+            Topic = topic;
+            Instructor = instructor;
+            EnrolledStudents = enrolledStudents;
+        }
 
 
     }
