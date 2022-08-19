@@ -27,18 +27,49 @@ namespace SchoolPractice
             nextStudentId++;
         }
 
+        public string StudentInfo()
+        {
+            return (Name + " has a GPA of :  " + Gpa);
+        }
+
         // TODO: Complete the AddGrade method.
         public void AddGrade(int courseCredits, double grade)
         {
-            // Update the appropriate properties: NumberOfCredits, Gpa
+            //Update to appropriate fields: NumberOfCredits, Gpa
+            double totalQualityScore = Gpa * NumberOfCredits;
+            totalQualityScore += courseCredits * grade;
+            NumberOfCredits += courseCredits;
+            Gpa = (double)(totalQualityScore / NumberOfCredits);
         }
 
         //TODO: Complete the GetGradeLevel method here:
         public string GetGradeLevel(int credits)
         {
-            // Determine the grade level of the student based on NumberOfCredits
-            return "grade level tbd";
+            //Determine the grade Level of the student based on NumberOfCredits
+            //Freshman (0-29 credits), Sophomore (30-59 credits), Junior (60-89 credits), or Senior (90+ credits)
+            if (credits <= 29)
+            {
+                return "freshman";
+            }
+            else if (credits <= 59)
+            {
+                return "sophomore";
+            }
+            else if (credits <= 89)
+            {
+                return "junior";
+            }
+            else
+            {
+                return "senior";
+            }
         }
+
+        // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather
+        //  than just the class fields.
+
+        // TODO: Add your custom 'Equals' method here. Consider which fields should match in order to call two
+        //  Student objects equal.
 
     }
 }

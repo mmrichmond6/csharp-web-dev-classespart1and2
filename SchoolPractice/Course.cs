@@ -8,11 +8,18 @@ namespace SchoolPractice
     {
         public string Topic { get; set; }
         public Teacher Instructor { get; set; }
-        public List<Student> enrolledStudents { get; set; }
+        public List<Student> EnrolledStudents { get; set; }
 
-
+        public Course(string topic, Teacher instructor, List<Student> enrolledStudents)
+        {
+            Topic = topic;
+            Instructor = instructor;
+            EnrolledStudents = enrolledStudents;
+        }
         // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather than
         //  just the class fields.
+
+
 
         public override bool Equals(object obj)
         {
