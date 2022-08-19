@@ -17,6 +17,16 @@ namespace SchoolPractice
             EnrolledStudents = enrolledStudents;
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Course course &&
+                   Topic == course.Topic &&
+                   EqualityComparer<Teacher>.Default.Equals(Instructor, course.Instructor);
+        }
 
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Topic, Instructor);
+        }
     }
 }
